@@ -1,15 +1,22 @@
 :root {
-  --yellow: #f7e744;
   --threadBlue: #0721c8;
+  --futurRed: #da1334;
+  --saturatedGreen: #e5f77d;
+  --borderColor: #19190f;
   --light: white;
-  --dark: black;
+  --dark: #040404;
   --white: white;
   --black: black;
   --antiquewhite: antiquewhite;
   --nav-height: 5.21em;
   --container-full-height: calc(100vh - var(--nav-height));
   --container-padding: 1em;
-  --body-font-size: 1.46em;
+  --borderSize: 1px;
+  --spacing-75: 3.91em;
+  --spacing-100: 5.21em;
+  --spacing-50: 2.6em;
+  --body-font-size: 1em;
+  --animationDuration: 150ms;
 }
 
 * {
@@ -101,7 +108,9 @@ html button:focus,
 html a:focus,
 body button:focus,
 body a:focus {
-  color: var(--dark);
+  color: var(--futurRed);
+  outline: 1px dotted var(--futurRed);
+  background-color: inherit;
 }
 html button,
 body button {
