@@ -117,6 +117,10 @@ body {
     text-transform: uppercase;
   }
 
+  a:hover {
+    color: var(--futurRed);
+  }
+
   button:focus,
   a:focus {
     color: var(--futurRed);
@@ -142,8 +146,8 @@ body {
 
   button:hover,
   button:active {
-    color: var(--black);
-    background-color: var(--yellow);
+    color: var(--dark);
+    background-color: var(--futurRed);
   }
 }
 
@@ -240,6 +244,6 @@ main {
 }
 
 ::selection {
-  color: var(--black);
-  background-color: var(--yellow);
+  color: var(--white);
+  background-color: var(--dark);
 }

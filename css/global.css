@@ -104,6 +104,10 @@ body a {
   font-size: inherit;
   text-transform: uppercase;
 }
+html a:hover,
+body a:hover {
+  color: var(--futurRed);
+}
 html button:focus,
 html a:focus,
 body button:focus,
@@ -129,8 +133,8 @@ html button:hover,
 html button:active,
 body button:hover,
 body button:active {
-  color: var(--black);
-  background-color: var(--yellow);
+  color: var(--dark);
+  background-color: var(--futurRed);
 }
 
 .container {
@@ -211,10 +215,10 @@ main .is-hero {
   }
 }
 ::-moz-selection {
-  color: var(--black);
-  background-color: var(--yellow);
+  color: var(--white);
+  background-color: var(--dark);
 }
 ::selection {
-  color: var(--black);
-  background-color: var(--yellow);
+  color: var(--white);
+  background-color: var(--dark);
 }
