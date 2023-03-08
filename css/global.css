@@ -174,7 +174,7 @@ main section {
 main section .container {
   width: 100%;
 }
-main .is-hero {
+main .is-hero .container {
   min-height: var(--container-full-height);
 }
 
