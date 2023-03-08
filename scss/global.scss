@@ -1,5 +1,4 @@
 :root {
-  --yellow: rgb(196, 255, 86);
   --yellow: #f7e744;
   --threadBlue: #0721c8;
   --light: white;
@@ -23,8 +22,6 @@
   text-decoration: none;
   list-style: none;
   list-style-type: none;
-
-  color: var(--dark);
   font-weight: normal;
 }
 
@@ -33,7 +30,8 @@ body {
   font-family: "Uncut Sans Variable", Switzer-Variable, sans-serif;
   font-size: 1vw;
 
-  color: inherit;
+  color: var(--dark);
+  background-color: var(--light);
 
   h1,
   h2,
@@ -41,7 +39,7 @@ body {
   h4,
   h5,
   h6 {
-    font-family: "Uncut Sans Variable";
+    font-family: "Uncut Sans Variable", Switzer-Variable, sans-serif;
 
     font-style: normal;
     font-weight: normal;
@@ -77,7 +75,7 @@ body {
   }
   p {
     font-size: var(--body-font-size);
-    font-family: "Atkinson Hyperlegible";
+    // font-family: "Atkinson Hyperlegible";
     // font-family: "IBM Plex Sans";
 
     font-style: normal;
@@ -92,7 +90,7 @@ body {
     font-size: 7.71em;
     max-width: 16ch;
   }
-  .small_paragraph {
+  .display_paragraph {
     // font-size: 1.09em;
     font-size: 1.25em;
   }
@@ -107,9 +105,7 @@ body {
 
   button:focus,
   a:focus {
-    // outline: none;
     color: var(--dark);
-    // background: none;
   }
 
   button {
@@ -138,8 +134,6 @@ body {
 .container {
   max-width: 1920px;
   margin: auto;
-
-  padding: var(--container-padding);
 }
 
 nav {
@@ -150,20 +144,20 @@ nav {
   left: 0;
   border-bottom: 1px solid black;
 
+  padding: 0 var(--container-padding);
+
   .container {
     height: var(--nav-height);
     width: 100%;
-
-    padding-top: 0;
-    padding-bottom: 0;
-    background-color: inherit;
-    background-color: var(--light);
 
     display: flex;
     align-items: center;
 
     .nav_logo {
-      height: 20%;
+      width: 100%;
+      img {
+        width: 12em;
+      }
     }
   }
 }
@@ -174,12 +168,15 @@ main {
 
   section {
     width: 100%;
+    padding: var(--container-padding);
 
     .container {
       width: 100%;
-      // min-height: 100vh;
-      min-height: var(--container-full-height);
     }
+  }
+  .is-hero {
+    // min-height: 100vh;
+    min-height: var(--container-full-height);
   }
 }
 
