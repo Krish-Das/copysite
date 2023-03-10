@@ -42,6 +42,7 @@ body {
   font-size: 1vw;
   color: var(--white);
   background-color: var(--dark);
+  position: relative;
 }
 html h1,
 html h2,
@@ -228,6 +229,22 @@ nav .container .nav_logo {
 }
 nav .container .nav_logo img {
   width: 12em;
+}
+
+.cursor {
+  --cursor-size: 10px;
+  aspect-ratio: 1;
+  width: var(--cursor-size);
+  position: absolute;
+  top: calc(var(--cursor-size) * -1);
+  left: calc(var(--cursor-size) * -1);
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: var(--white);
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  transition: all 100ms ease-out;
 }
 
 main {
