@@ -236,12 +236,17 @@ main {
 main section {
   padding-inline: var(--spacing-75);
 }
+main section:not(:nth-last-of-type(1)) {
+  margin-bottom: 25vh;
+}
 main section .container {
   padding: var(--spacing-100) 0;
 }
+main .is-hero {
+  margin-bottom: 50vh !important;
+}
 main .is-hero .container {
   min-height: 100vh;
-  margin-bottom: 50vh;
 }
 
 footer {
