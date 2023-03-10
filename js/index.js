@@ -12,7 +12,7 @@ function createSizeMonitor() {
     left: 0;
     z-index: 100000;
     padding: 1px 5px;
-    background-color: white;
+    background-color: inherit;
     border-bottom-right-radius: 5px;
     line-height: 1;
     `;

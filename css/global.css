@@ -8,15 +8,22 @@
   --white: white;
   --black: black;
   --antiquewhite: antiquewhite;
-  --nav-height: 5.21em;
+  --nav-height: 0em;
   --container-full-height: calc(100vh - var(--nav-height));
   --container-padding: 1em;
   --borderSize: 1px;
+  --card-height: 15.63em;
+  --card-width: 26.04em;
+  --spacing-10: 0.52em;
+  --spacing-30: 1.56em;
+  --spacing-50: 2.6em;
   --spacing-75: 3.91em;
   --spacing-100: 5.21em;
-  --spacing-50: 2.6em;
-  --body-font-size: 1em;
-  --animationDuration: 150ms;
+  --spacing-200: 10.42em;
+  --body-font-size: 0.94em;
+  --font-size-14: 0.73em;
+  --rounded-border-radius: 100vh;
+  --transitionDuration: 150ms;
 }
 
 * {
@@ -33,8 +40,8 @@ html,
 body {
   font-family: "Uncut Sans Variable", Switzer-Variable, sans-serif;
   font-size: 1vw;
-  color: var(--dark);
-  background-color: var(--light);
+  color: var(--white);
+  background-color: var(--dark);
 }
 html h1,
 html h2,
@@ -51,29 +58,33 @@ body h6 {
   font-family: "Uncut Sans Variable", Switzer-Variable, sans-serif;
   font-style: normal;
   font-weight: normal;
-  line-height: 1;
 }
 html h1,
 body h1 {
-  font-size: calc(var(--body-font-size) * 3);
+  font-size: 2.5em;
+  text-transform: uppercase;
+  font-family: "BL Melody";
 }
 html h2,
 body h2 {
-  font-size: 3.75em;
+  font-size: 1.93em;
+  text-transform: uppercase;
+  font-family: "BL Melody";
 }
 html h3,
 body h3 {
-  font-size: 3.75em;
-  font-weight: 500;
+  font-size: 1.56em;
+  text-transform: uppercase;
+  font-family: "BL Melody";
 }
 html h4,
 body h4 {
-  font-weight: 500;
-  font-size: 2.5em;
-  text-transform: capitalize;
+  font-size: 1.09em;
 }
 html h5,
-body h5 {
+html .heading-style-h5,
+body h5,
+body .heading-style-h5 {
   font-size: calc(var(--body-font-size) * 1.2);
 }
 html h6,
@@ -87,47 +98,97 @@ body p {
   font-weight: normal;
   max-width: 45ch;
 }
-html .display_heading,
-body .display_heading {
-  font-weight: 400;
-  font-size: 7.71em;
-  max-width: 16ch;
-}
 html .display_paragraph,
 body .display_paragraph {
   font-size: 1.25em;
 }
+html .heading-style-h1,
+body .heading-style-h1 {
+  font-size: 2.5em;
+  text-transform: uppercase;
+  font-family: "BL Melody";
+}
+html .heading-style-h2,
+body .heading-style-h2 {
+  font-size: 1.93em;
+  text-transform: uppercase;
+  font-family: "BL Melody";
+}
+html .heading-style-h3,
+body .heading-style-h3 {
+  font-size: 1.56em;
+  text-transform: uppercase;
+  font-family: "BL Melody";
+}
+html .heading-style-h4,
+body .heading-style-h4 {
+  font-size: 1.09em;
+}
+html .heading-style-h5,
+body .heading-style-h5 {
+  font-size: calc(var(--body-font-size) * 1.2);
+}
+html .heading-style-h6,
+body .heading-style-h6 {
+  font-size: calc(var(--body-font-size) * 1.1);
+}
+html .display-block,
+body .display-block {
+  display: block;
+}
+html .text-weight-bold,
+body .text-weight-bold {
+  font-weight: bold;
+}
+html .text-size-small,
+body .text-size-small {
+  font-size: var(--font-size-14);
+  letter-spacing: 0.05ch;
+}
+html .text-style-uppercase,
+body .text-style-uppercase {
+  text-transform: uppercase;
+}
+html .opacity-80,
+body .opacity-80 {
+  opacity: 80%;
+}
+html .opacity-60,
+body .opacity-60 {
+  opacity: 60%;
+}
 html a,
 body a {
   padding: 0 0 0.25em 0;
-  color: var(--dark);
+  color: inherit;
   font-size: inherit;
+  border-bottom: var(--borderSize) dotted var(--white);
   text-transform: uppercase;
-}
-html a:hover,
-body a:hover {
-  color: var(--futurRed);
 }
 html button:focus,
 html a:focus,
 body button:focus,
 body a:focus {
-  color: var(--futurRed);
   outline: 1px dotted var(--futurRed);
   background-color: inherit;
 }
 html button,
 body button {
-  height: 25px;
-  padding: 0.1em 0.5em;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.8em 2em;
   font-family: inherit;
   font-size: 0.9em;
   text-transform: uppercase;
-  color: var(--white);
-  background-color: var(--threadBlue);
-  border: none;
-  outline: none;
+  color: inherit;
+  border: var(--borderSize) solid var(--white);
+  border-radius: var(--rounded-border-radius);
   cursor: pointer;
+  transition: all var(--transitionDuration);
 }
 html button:hover,
 html button:active,
@@ -135,6 +196,7 @@ body button:hover,
 body button:active {
   color: var(--dark);
   background-color: var(--futurRed);
+  border-color: var(--futurRed);
 }
 
 .container {
@@ -164,18 +226,61 @@ nav .container .nav_logo img {
 }
 
 main {
-  width: 100%;
   margin-top: var(--nav-height);
+  margin-bottom: 100vh;
 }
 main section {
-  width: 100%;
-  padding-inline: var(--container-padding);
+  padding-inline: var(--spacing-75);
 }
 main section .container {
-  width: 100%;
+  padding: var(--spacing-100) 0;
 }
 main .is-hero .container {
   min-height: var(--container-full-height);
+}
+
+footer {
+  padding-inline: var(--spacing-75);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  color: var(--dark);
+  background-color: var(--white);
+}
+footer .container {
+  height: 100vh;
+  padding: var(--spacing-100) 0;
+  overflow: hidden;
+  align-content: space-between;
+}
+footer .container .footer_cta {
+  height: var(--card-height);
+}
+footer .container .footer_cta .cta {
+  grid-column: span 2;
+  height: 100%;
+  width: 100%;
+  background-color: var(--dark);
+}
+footer .container .footer_content .footer_content-left {
+  grid-column: span 2;
+}
+footer .container .footer_content .footer_content-left h4 {
+  margin-bottom: var(--spacing-30);
+}
+footer .container .footer_content .footer_content-left p:nth-of-type(1) {
+  margin-bottom: var(--spacing-200);
+}
+footer .container .footer_content .footer_content-right {
+  height: 100%;
+  grid-column: 4/-1;
+  border-left: var(--borderSize) dotted var(--borderColor);
+}
+
+.display_grid-8 {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
 }
 
 @media only screen and (min-width: 1920px) {
@@ -215,10 +320,10 @@ main .is-hero .container {
   }
 }
 ::-moz-selection {
-  color: var(--white);
-  background-color: var(--dark);
+  color: var(--dark);
+  background-color: var(--futurRed);
 }
 ::selection {
-  color: var(--white);
-  background-color: var(--dark);
+  color: var(--dark);
+  background-color: var(--futurRed);
 }

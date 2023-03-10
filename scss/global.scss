@@ -12,23 +12,35 @@
   --antiquewhite: antiquewhite;
 
   //? -- sizes --
-  --nav-height: 5.21em;
+  --nav-height: 0em; // 5.21em;
   --container-full-height: calc(100vh - var(--nav-height));
   --container-padding: 1em;
 
   --borderSize: 1px;
 
+  //? -- card properties --
+  --card-height: 15.63em;
+  --card-width: 26.04em;
+
   //? -- spacings --
+  --spacing-10: 0.52em;
+  --spacing-30: 1.56em;
+  --spacing-50: 2.6em;
   --spacing-75: 3.91em;
   --spacing-100: 5.21em;
-  --spacing-50: 2.6em;
+  --spacing-200: 10.42em;
 
   //? -- Font Sizes --
-  --body-font-size: 1em; // 1.46em;
+  --body-font-size: 0.94em; // 1.46em;
+  --font-size-14: 0.73em;
+
+  //? -- others --
+  --rounded-border-radius: 100vh;
 
   //? -- Animation --
-  --animationDuration: 150ms;
+  --transitionDuration: 150ms;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -44,8 +56,8 @@ body {
   font-family: "Uncut Sans Variable", Switzer-Variable, sans-serif;
   font-size: 1vw;
 
-  color: var(--dark);
-  background-color: var(--light);
+  color: var(--white);
+  background-color: var(--dark);
 
   h1,
   h2,
@@ -57,31 +69,32 @@ body {
 
     font-style: normal;
     font-weight: normal;
-
-    line-height: 1;
   }
 
   h1 {
-    font-size: calc(var(--body-font-size) * 3);
+    // font-size: calc(var(--body-font-size) * 3);
+    font-size: 2.5em;
+    text-transform: uppercase;
+    font-family: "BL Melody";
   }
   h2 {
     // font-size: calc(var(--body-font-size) * 2);
-    font-size: 3.75em;
-    // font-weight: 500;
+    font-size: 1.93em;
+    text-transform: uppercase;
+    font-family: "BL Melody";
   }
   h3 {
     // font-size: calc(var(--body-font-size) * 1.5);
-    font-size: 3.75em;
-    font-weight: 500;
+    font-size: 1.56em;
+    text-transform: uppercase;
+    font-family: "BL Melody";
   }
   h4 {
     // font-size: calc(var(--body-font-size) * 1.3);
-    font-weight: 500;
-    font-size: 2.5em;
-
-    text-transform: capitalize;
+    font-size: 1.09em;
   }
-  h5 {
+  h5,
+  .heading-style-h5 {
     font-size: calc(var(--body-font-size) * 1.2);
   }
   h6 {
@@ -98,56 +111,106 @@ body {
   }
 
   .display_heading {
-    // font-size: calc(var(----body-font-size) * 4.3);
-
-    font-weight: 400;
-    font-size: 7.71em;
-    max-width: 16ch;
   }
   .display_paragraph {
     // font-size: 1.09em;
     font-size: 1.25em;
   }
 
+  .heading-style-h1 {
+    // font-size: calc(var(--body-font-size) * 3);
+    font-size: 2.5em;
+    text-transform: uppercase;
+    font-family: "BL Melody";
+  }
+  .heading-style-h2 {
+    font-size: 1.93em;
+    text-transform: uppercase;
+    font-family: "BL Melody";
+  }
+  .heading-style-h3 {
+    font-size: 1.56em;
+    text-transform: uppercase;
+    font-family: "BL Melody";
+  }
+  .heading-style-h4 {
+    font-size: 1.09em;
+  }
+  .heading-style-h5 {
+    font-size: calc(var(--body-font-size) * 1.2);
+  }
+  .heading-style-h6 {
+    font-size: calc(var(--body-font-size) * 1.1);
+  }
+
+  .display-block {
+    display: block;
+  }
+  .text-weight-bold {
+    font-weight: bold;
+  }
+
+  .text-size-small {
+    font-size: var(--font-size-14);
+    letter-spacing: 0.05ch;
+  }
+  .text-style-uppercase {
+    text-transform: uppercase;
+  }
+
+  .opacity-80 {
+    opacity: 80%;
+  }
+  .opacity-60 {
+    opacity: 60%;
+  }
+
   a {
     padding: 0 0 0.25em 0;
 
-    color: var(--dark);
+    color: inherit;
     font-size: inherit;
+    border-bottom: var(--borderSize) dotted var(--white);
     text-transform: uppercase;
   }
 
   a:hover {
-    color: var(--futurRed);
   }
 
   button:focus,
   a:focus {
-    color: var(--futurRed);
     outline: 1px dotted var(--futurRed);
     background-color: inherit;
   }
 
   button {
-    height: 25px;
-    padding: 0.1em 0.5em;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    width: fit-content;
+
+    padding: 0.8em 2em;
 
     font-family: inherit;
     font-size: 0.9em;
     text-transform: uppercase;
 
-    color: var(--white);
-    background-color: var(--threadBlue);
-    border: none;
-    outline: none;
+    // color: var(--white);
+    // background-color: var(--threadBlue);
+    color: inherit;
+    border: var(--borderSize) solid var(--white);
+    border-radius: var(--rounded-border-radius);
 
     cursor: pointer;
+    transition: all var(--transitionDuration);
   }
 
   button:hover,
   button:active {
     color: var(--dark);
     background-color: var(--futurRed);
+    border-color: var(--futurRed);
   }
 }
 
@@ -183,21 +246,75 @@ nav {
 }
 
 main {
-  width: 100%;
   margin-top: var(--nav-height);
+  margin-bottom: 100vh; // to reveal the footer
 
   section {
-    width: 100%;
-    padding-inline: var(--container-padding);
+    padding-inline: var(--spacing-75);
 
     .container {
-      width: 100%;
+      padding: var(--spacing-100) 0;
     }
   }
   .is-hero .container {
     // min-height: 100vh;
     min-height: var(--container-full-height);
   }
+}
+
+footer {
+  padding-inline: var(--spacing-75);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+
+  color: var(--dark);
+  background-color: var(--white);
+
+  .container {
+    height: 100vh;
+    padding: var(--spacing-100) 0;
+    overflow: hidden;
+    align-content: space-between;
+
+    .footer_cta {
+      height: var(--card-height);
+
+      .cta {
+        grid-column: span 2;
+        height: 100%;
+        width: 100%;
+        background-color: var(--dark);
+      }
+    }
+
+    .footer_content {
+      .footer_content-left {
+        grid-column: span 2;
+
+        h4 {
+          margin-bottom: var(--spacing-30);
+        }
+        p {
+          &:nth-of-type(1) {
+            margin-bottom: var(--spacing-200);
+          }
+        }
+      }
+
+      .footer_content-right {
+        height: 100%;
+        grid-column: 4 / -1;
+        border-left: var(--borderSize) dotted var(--borderColor);
+      }
+    }
+  }
+}
+
+.display_grid-8 {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
 }
 
 //? custom viewport for responsivness ---------
@@ -244,6 +361,6 @@ main {
 }
 
 ::selection {
-  color: var(--white);
-  background-color: var(--dark);
+  color: var(--dark);
+  background-color: var(--futurRed);
 }
