@@ -154,8 +154,12 @@ body {
     font-size: var(--font-size-14);
     letter-spacing: 0.05ch;
   }
+
   .text-style-uppercase {
     text-transform: uppercase;
+  }
+  .text-style-lowercase {
+    text-transform: lowercase;
   }
 
   .opacity-80 {
@@ -188,16 +192,15 @@ body {
     outline: none;
     background: none;
     padding: 0;
-    width: fit-content;
 
+    width: fit-content;
     padding: 0.8em 2em;
 
     font-family: inherit;
-    font-size: 0.9em;
+    font-size: var(--font-size-14);
     text-transform: uppercase;
+    letter-spacing: 0.05ch;
 
-    // color: var(--white);
-    // background-color: var(--threadBlue);
     color: inherit;
     border: var(--borderSize) solid var(--white);
     border-radius: var(--rounded-border-radius);
@@ -246,7 +249,6 @@ nav {
 }
 
 main {
-  margin-top: var(--nav-height);
   margin-bottom: 100vh; // to reveal the footer
 
   section {
@@ -257,8 +259,8 @@ main {
     }
   }
   .is-hero .container {
-    // min-height: 100vh;
-    min-height: var(--container-full-height);
+    min-height: 100vh;
+    margin-bottom: 50vh;
   }
 }
 
@@ -277,6 +279,10 @@ footer {
     padding: var(--spacing-100) 0;
     overflow: hidden;
     align-content: space-between;
+
+    a {
+      border-color: var(--dark);
+    }
 
     .footer_cta {
       height: var(--card-height);

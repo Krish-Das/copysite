@@ -149,6 +149,10 @@ html .text-style-uppercase,
 body .text-style-uppercase {
   text-transform: uppercase;
 }
+html .text-style-lowercase,
+body .text-style-lowercase {
+  text-transform: lowercase;
+}
 html .opacity-80,
 body .opacity-80 {
   opacity: 80%;
@@ -182,8 +186,9 @@ body button {
   width: fit-content;
   padding: 0.8em 2em;
   font-family: inherit;
-  font-size: 0.9em;
+  font-size: var(--font-size-14);
   text-transform: uppercase;
+  letter-spacing: 0.05ch;
   color: inherit;
   border: var(--borderSize) solid var(--white);
   border-radius: var(--rounded-border-radius);
@@ -226,7 +231,6 @@ nav .container .nav_logo img {
 }
 
 main {
-  margin-top: var(--nav-height);
   margin-bottom: 100vh;
 }
 main section {
@@ -236,7 +240,8 @@ main section .container {
   padding: var(--spacing-100) 0;
 }
 main .is-hero .container {
-  min-height: var(--container-full-height);
+  min-height: 100vh;
+  margin-bottom: 50vh;
 }
 
 footer {
@@ -253,6 +258,9 @@ footer .container {
   padding: var(--spacing-100) 0;
   overflow: hidden;
   align-content: space-between;
+}
+footer .container a {
+  border-color: var(--dark);
 }
 footer .container .footer_cta {
   height: var(--card-height);
