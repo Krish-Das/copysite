@@ -8,4 +8,5 @@ function repositionCursor(e) {
   cursor.style.left = `${e.pageX}px`;
 }
 
+// TODO: Add requestanimationframe()
 window.addEventListener("mousemove", (e) => repositionCursor(e));
