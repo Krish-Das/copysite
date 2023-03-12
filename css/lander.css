@@ -150,12 +150,27 @@ footer .container .content_wraper h2 {
   width: 100%;
   height: 100%;
   grid-column: span 2;
-  padding-left: var(--spacing-30);
+  padding-inline: var(--spacing-30);
   border-left: var(--borderSize) dotted var(--white);
 }
 .section_lander-manifesto .container .content_wraper .manifesto_card-wraper .card .card_content {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.section_lander-manifesto .container .content_wraper .manifesto_card-wraper .card .card_content .card-number {
+  font-size: var(--font-size-14);
+}
+.section_lander-manifesto .container .content_wraper .manifesto_card-wraper .card .card_content .card_info h4 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-30);
+}
+.section_lander-manifesto .container .content_wraper .manifesto_card-wraper .card .card_content .card_info p {
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 32ch;
 }
 .section_lander-manifesto .container .content_wraper .manifesto_card-wraper .card:nth-of-type(2) {
   grid-column: 3/span 2;
@@ -184,13 +199,17 @@ footer .container .content_wraper h2 {
 .section_lander-offerings .container .content_wraper .offerings_card-wraper .card .card_content {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.section_lander-offerings .container .content_wraper .offerings_card-wraper .card .card_content p {
+  font-size: var(--font-size-200);
+}
+.section_lander-offerings .container .content_wraper .offerings_card-wraper .card .card_content ul li {
+  font-size: var(--font-size-30);
+  text-transform: uppercase;
 }
 .section_lander-offerings .container .content_wraper .offerings_card-wraper .card:nth-of-type(1) {
   grid-column: 1/span 3;
-}
-
-.section_lander-hero,
-.section_lander-manifesto,
-.section_lander-offerings {
-  display: none;
 }
