@@ -213,3 +213,7 @@ footer .container .content_wraper h2 {
 .section_lander-offerings .container .content_wraper .offerings_card-wraper .card:nth-of-type(1) {
   grid-column: 1/span 3;
 }
+
+section:nth-last-of-type(1) {
+  padding-bottom: 70vh;
+}

@@ -280,6 +280,10 @@ footer .container {
   }
 }
 
+section:nth-last-of-type(1) {
+  padding-bottom: 70vh;
+}
+
 .section_lander-hero,
 .section_lander-projects,
 .section_lander-manifesto,
