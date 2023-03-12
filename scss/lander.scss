@@ -48,11 +48,11 @@ footer .container {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
 
+      margin-top: var(--spacing-100);
+
       .project_img-url {
         display: none;
       }
-
-      margin-top: var(--spacing-100);
 
       .project-content-wraper {
         grid-column: 1 / span 2;
