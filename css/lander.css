@@ -42,16 +42,69 @@ footer .container .content_wraper h2 {
   grid-template-columns: repeat(6, 1fr);
   margin-top: var(--spacing-100);
 }
+.section_lander-projects .container .lander_project .project_img-url {
+  display: none;
+}
 .section_lander-projects .container .lander_project .project-content-wraper {
   grid-column: 1/span 2;
+  position: relative;
+  border: none;
 }
-.section_lander-projects .container .lander_project .project-content-wraper .img {
+.section_lander-projects .container .lander_project .project-content-wraper .lander_project-name {
+  position: absolute;
+  top: 20%;
+  left: 100%;
+  z-index: 1;
+  transform: translateX(-50%);
+}
+.section_lander-projects .container .lander_project .project-content-wraper .lander_project-description {
+  margin-top: var(--spacing-10);
+  display: flex;
+  width: 100%;
+  --li-margin: var(--spacing-10);
+}
+.section_lander-projects .container .lander_project .project-content-wraper .lander_project-description li {
+  margin-right: var(--li-margin);
+  text-transform: none;
+}
+.section_lander-projects .container .lander_project .project-content-wraper .lander_project-description li + li::before {
+  content: "/";
+  margin-right: var(--li-margin);
+}
+.section_lander-projects .container .lander_project .project-content-wraper .lander_project-cta {
+  width: var(--spacing-100);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  display: grid;
+  place-content: center;
+  transform: translateX(-50%);
+  border: var(--borderSize) solid var(--white);
+}
+.section_lander-projects .container .lander_project .project-content-wraper .lander_project-img {
   width: 100%;
   aspect-ratio: 8/12;
-  background-color: #141414;
+  background-color: rgb(27, 27, 27);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: all 200ms ease-in;
+}
+.section_lander-projects .container .lander_project .project-content-wraper:hover .lander_project-img {
+  border-radius: 5px;
+  transform: scale(1.1);
 }
 .section_lander-projects .container .lander_project:nth-of-type(even) .project-content-wraper {
   grid-column: 4/span 2;
+}
+.section_lander-projects .container .lander_project:nth-of-type(even) .project-content-wraper .lander_project-name {
+  left: 20%;
+}
+.section_lander-projects .container .lander_project:nth-of-type(even) .project-content-wraper .lander_project-cta {
+  bottom: 10%;
+  left: 100%;
 }
 
 .section_lander-manifesto .container .content_wraper .manifesto_card-wraper {

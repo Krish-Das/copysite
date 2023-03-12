@@ -11,6 +11,8 @@
   --black: black;
   --antiquewhite: antiquewhite;
 
+  --white-opaque-20: rgba(255, 255, 255, 0.2);
+
   //? -- sizes --
   --nav-height: 0em; // 5.21em;
   --container-full-height: calc(100vh - var(--nav-height));
@@ -164,11 +166,24 @@ body {
     text-transform: lowercase;
   }
 
-  .opacity-80 {
-    opacity: 80%;
+  .white_opaque-80 {
+    color: rgba(255, 255, 255, 0.8);
   }
-  .opacity-60 {
-    opacity: 60%;
+  .white_opaque-60 {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .white_opaque-20 {
+    color: var(--white-opaque-20);
+  }
+
+  .black_opaque-80 {
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .black_opaque-60 {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  .black_opaque-20 {
+    color: rgba(0, 0, 0, 0.2);
   }
 
   a {
@@ -274,6 +289,11 @@ nav {
 main {
   margin-bottom: 100vh; // to reveal the footer
 
+  position: relative;
+  z-index: 2; // footer has z-index: 1
+
+  background-color: inherit;
+
   section {
     padding-inline: var(--spacing-75);
 
@@ -299,7 +319,7 @@ footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  z-index: 0;
 
   color: var(--dark);
   background-color: var(--white);

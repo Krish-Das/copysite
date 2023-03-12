@@ -8,6 +8,7 @@
   --white: white;
   --black: black;
   --antiquewhite: antiquewhite;
+  --white-opaque-20: rgba(255, 255, 255, 0.2);
   --nav-height: 0em;
   --container-full-height: calc(100vh - var(--nav-height));
   --container-padding: 1em;
@@ -154,13 +155,29 @@ html .text-style-lowercase,
 body .text-style-lowercase {
   text-transform: lowercase;
 }
-html .opacity-80,
-body .opacity-80 {
-  opacity: 80%;
+html .white_opaque-80,
+body .white_opaque-80 {
+  color: rgba(255, 255, 255, 0.8);
 }
-html .opacity-60,
-body .opacity-60 {
-  opacity: 60%;
+html .white_opaque-60,
+body .white_opaque-60 {
+  color: rgba(255, 255, 255, 0.6);
+}
+html .white_opaque-20,
+body .white_opaque-20 {
+  color: var(--white-opaque-20);
+}
+html .black_opaque-80,
+body .black_opaque-80 {
+  color: rgba(0, 0, 0, 0.8);
+}
+html .black_opaque-60,
+body .black_opaque-60 {
+  color: rgba(0, 0, 0, 0.6);
+}
+html .black_opaque-20,
+body .black_opaque-20 {
+  color: rgba(0, 0, 0, 0.2);
 }
 html a,
 body a {
@@ -249,6 +266,9 @@ nav .container .nav_logo img {
 
 main {
   margin-bottom: 100vh;
+  position: relative;
+  z-index: 2;
+  background-color: inherit;
 }
 main section {
   padding-inline: var(--spacing-75);
@@ -271,7 +291,7 @@ footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  z-index: 0;
   color: var(--dark);
   background-color: var(--white);
 }

@@ -48,21 +48,87 @@ footer .container {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
 
+      .project_img-url {
+        display: none;
+      }
+
       margin-top: var(--spacing-100);
 
       .project-content-wraper {
         grid-column: 1 / span 2;
+        position: relative;
+        border: none;
 
-        .img {
+        .lander_project-name {
+          position: absolute;
+          top: 20%;
+          left: 100%;
+          z-index: 1;
+          transform: translateX(-50%);
+        }
+        .lander_project-description {
+          margin-top: var(--spacing-10);
+          display: flex;
+          width: 100%;
+
+          --li-margin: var(--spacing-10);
+
+          li {
+            margin-right: var(--li-margin);
+            text-transform: none;
+          }
+
+          li + li {
+            &::before {
+              content: "/";
+              margin-right: var(--li-margin);
+            }
+          }
+        }
+        .lander_project-cta {
+          width: var(--spacing-100);
+          aspect-ratio: 1;
+          border-radius: 50%;
+
+          position: absolute;
+          bottom: 10%;
+          left: 0;
+          display: grid;
+          place-content: center;
+
+          transform: translateX(-50%);
+          border: var(--borderSize) solid var(--white);
+        }
+
+        .lander_project-img {
           width: 100%;
           aspect-ratio: 8 / 12;
-          background-color: #141414;
+
+          background-color: rgb(27, 27, 27);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+
+          transition: all 200ms ease-in;
         }
+      }
+
+      .project-content-wraper:hover .lander_project-img {
+        border-radius: 5px;
+        transform: scale(1.1);
       }
 
       &:nth-of-type(even) {
         .project-content-wraper {
           grid-column: 4 / span 2;
+
+          .lander_project-name {
+            left: 20%;
+          }
+          .lander_project-cta {
+            bottom: 10%;
+            left: 100%;
+          }
         }
       }
     }
