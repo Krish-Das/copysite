@@ -49,6 +49,11 @@ footer .container .content_wraper h2 {
   grid-column: 1/span 2;
   position: relative;
   border: none;
+  --project-transitionDuration: 200ms;
+  --project-transitionEase: ease;
+  --project-foreground-color: var(--dark);
+  --project-background-color: var(--white);
+  --project-accent-color: var(--white);
 }
 .section_lander-projects .container .lander_project .project-content-wraper .lander_project-name {
   position: absolute;
@@ -56,6 +61,7 @@ footer .container .content_wraper h2 {
   left: 100%;
   z-index: 1;
   transform: translateX(-50%);
+  color: var(--project-foreground-color);
 }
 .section_lander-projects .container .lander_project .project-content-wraper .lander_project-description {
   margin-top: var(--spacing-10);
@@ -82,6 +88,8 @@ footer .container .content_wraper h2 {
   place-content: center;
   transform: translateX(-50%);
   border: var(--borderSize) solid var(--white);
+  background-color: var(--dark);
+  transition: all var(--project-transitionDuration);
 }
 .section_lander-projects .container .lander_project .project-content-wraper .lander_project-img {
   width: 100%;
@@ -90,11 +98,16 @@ footer .container .content_wraper h2 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  transition: all 200ms ease-in;
+  transition: all var(--project-transitionDuration) var(--project-transitionEase);
 }
 .section_lander-projects .container .lander_project .project-content-wraper:hover .lander_project-img {
   border-radius: 5px;
   transform: scale(1.1);
+}
+.section_lander-projects .container .lander_project .project-content-wraper:hover .lander_project-cta {
+  color: var(--project-accent-color);
+  background-color: var(--project-background-color);
+  border-color: var(--project-background-color);
 }
 .section_lander-projects .container .lander_project:nth-of-type(even) .project-content-wraper {
   grid-column: 4/span 2;
@@ -105,6 +118,24 @@ footer .container .content_wraper h2 {
 .section_lander-projects .container .lander_project:nth-of-type(even) .project-content-wraper .lander_project-cta {
   bottom: 10%;
   left: 100%;
+}
+.section_lander-projects .container .lander_project:nth-of-type(1) .project-content-wraper {
+  --project-foreground-color: white;
+  --project-background-color: #f80134;
+  --project-accent-color: #0b090f;
+}
+.section_lander-projects .container .lander_project:nth-of-type(2) .project-content-wraper {
+  --project-foreground-color: #ffffff;
+  --project-background-color: #e82707;
+}
+.section_lander-projects .container .lander_project:nth-of-type(3) .project-content-wraper {
+  --project-foreground-color: #white;
+  --project-background-color: #cfbbb2;
+  --project-accent-color: #4a2417;
+}
+.section_lander-projects .container .lander_project:nth-of-type(4) .project-content-wraper {
+  --project-foreground-color: #ffffff;
+  --project-background-color: #e82707;
 }
 
 .section_lander-manifesto .container .content_wraper .manifesto_card-wraper {
@@ -156,4 +187,10 @@ footer .container .content_wraper h2 {
 }
 .section_lander-offerings .container .content_wraper .offerings_card-wraper .card:nth-of-type(1) {
   grid-column: 1/span 3;
+}
+
+.section_lander-hero,
+.section_lander-manifesto,
+.section_lander-offerings {
+  display: none;
 }

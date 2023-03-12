@@ -59,12 +59,20 @@ footer .container {
         position: relative;
         border: none;
 
+        --project-transitionDuration: 200ms;
+        --project-transitionEase: ease;
+
+        --project-foreground-color: var(--dark); // overritten below
+        --project-background-color: var(--white); // overritten below
+        --project-accent-color: var(--white); // overritten below
+
         .lander_project-name {
           position: absolute;
           top: 20%;
           left: 100%;
           z-index: 1;
           transform: translateX(-50%);
+          color: var(--project-foreground-color);
         }
         .lander_project-description {
           margin-top: var(--spacing-10);
@@ -98,8 +106,10 @@ footer .container {
 
           transform: translateX(-50%);
           border: var(--borderSize) solid var(--white);
-        }
+          background-color: var(--dark);
 
+          transition: all var(--project-transitionDuration);
+        }
         .lander_project-img {
           width: 100%;
           aspect-ratio: 8 / 12;
@@ -109,13 +119,21 @@ footer .container {
           background-size: cover;
           background-position: center;
 
-          transition: all 200ms ease-in;
+          transition: all var(--project-transitionDuration)
+            var(--project-transitionEase);
         }
       }
 
-      .project-content-wraper:hover .lander_project-img {
-        border-radius: 5px;
-        transform: scale(1.1);
+      .project-content-wraper:hover {
+        .lander_project-img {
+          border-radius: 5px;
+          transform: scale(1.1);
+        }
+        .lander_project-cta {
+          color: var(--project-accent-color);
+          background-color: var(--project-background-color);
+          border-color: var(--project-background-color);
+        }
       }
 
       &:nth-of-type(even) {
@@ -130,6 +148,26 @@ footer .container {
             left: 100%;
           }
         }
+      }
+
+      // TODO: Populate these dynamimcally
+      &:nth-of-type(1) .project-content-wraper {
+        --project-foreground-color: white;
+        --project-background-color: #f80134;
+        --project-accent-color: #0b090f;
+      }
+      &:nth-of-type(2) .project-content-wraper {
+        --project-foreground-color: #ffffff;
+        --project-background-color: #e82707;
+      }
+      &:nth-of-type(3) .project-content-wraper {
+        --project-foreground-color: #white;
+        --project-background-color: #cfbbb2;
+        --project-accent-color: #4a2417;
+      }
+      &:nth-of-type(4) .project-content-wraper {
+        --project-foreground-color: #ffffff;
+        --project-background-color: #e82707;
       }
     }
   }
@@ -208,8 +246,8 @@ footer .container {
 }
 
 .section_lander-hero,
-.section_lander-projects,
+// .section_lander-projects,
 .section_lander-manifesto,
 .section_lander-offerings {
-  // display: none;
+  display: none;
 }
