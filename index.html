@@ -5,13 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - Limag Studio</title>
+    <link
+      rel="shortcut icon"
+      href="./public/limag_logo-dark.svg"
+      type="image/x-icon"
+    />
 
     <link rel="stylesheet" href="./css/fontFaces.css" />
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/lander.css" />
   </head>
   <body>
-    <main>
+    <main data-scroll-container>
       <section class="section_lander-hero is-hero">
         <div class="container">
           <div class="lander_hero-card"></div>
@@ -247,7 +252,20 @@
       </div>
     </footer>
 
+    <!--? CDN ------------------------------------>
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    /> -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.js"></script>
+
+    <!--? Local JS ----------------------->
     <script src="./js/__landerImages.js"></script>
     <!-- <script src="./js/__customCursor.js"></script> -->
+
+    <!--? Locomotive scrolls ----------------------->
+    <!-- <script src="./js/initLocomitive.js"></script> -->
+    <!-- <script src="./js/initLenis.js"></script> -->
   </body>
 </html>
